@@ -8,12 +8,12 @@ body {
 }
 
 #parent {
-  width: 35%;
-  max-height: 500px;
+  width: 50%;
+  /* min-height: 500px; */
   -webkit-box-shadow: 0 5px 5px 5px red;
   box-shadow: -1px 0 5px gray, 1px 0 5px gray, 0 1px 5px gray;
   font-family: sans-serif;
-  font-size: 12px;
+  font-size: 20px;
   color: gray;
 }
 
@@ -24,9 +24,10 @@ body {
 }
 
 #parent li {
+  padding: 10px 12px 10px 0;
   display: flex;
   justify-content: space-between;
-  padding: 12px;
+  align-items: center;
   border-bottom: gray solid 1px;
 }
 
@@ -38,7 +39,7 @@ body {
 }
 
 #parent .head {
-  padding: 0 12px;
+  padding: 8px 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,12 +48,25 @@ body {
   /* outline: red solid 2px; */
 }
 
-#parent .input {
-  width: calc(100% - 24px);
-  padding: 12px;
-  font-style: italic;
-  border: 0;
+.div_input {
   border-bottom: gray solid 1px;
+}
+
+#parent .input,
+#parent .desc {
+  width: calc(100% - 60px);
+  padding: 20px 12px;
+  font-style: italic;
+  font-size: 15px;
+  border: 0;
+}
+
+#parent .desc {
+  width: calc(100% - 40px);
+  padding: 12px;
+  margin: 0;
+  border: 0;
+  /* outline: red solid 2px; */
 }
 
 #parent h3 {
@@ -70,7 +84,35 @@ body {
 }
 
 .div_clear_all button {
+  font-size: 17px;
+  font-weight: 500;
   color: gray;
   background-color: #f1f1f1;
   border: 0;
+}
+
+.can {
+  display: none;
+}
+
+.elipse,
+.can,
+.refresh,
+.enter {
+  font-size: 25px;
+  padding: 6px;
+}
+
+input.chk {
+  width: 20px;
+  height: 20px;
+  margin: 6px 4px 6px 12px;
+}
+
+input:focus{
+  outline: none;
+}
+
+.strike {
+  text-decoration: line-through;
 }
