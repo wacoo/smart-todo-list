@@ -27,10 +27,10 @@ After you're finished please remove all the comments and instructions!
 
 <div align="center">
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="static/images/defcon_logo.png" alt="logo" width="140"  height="auto" />
+  <img src="src/images/s_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>[Webpack template]</b></h3>
+  <h3><b>Smart Toto List</b></h3>
 
 </div>
 
@@ -56,53 +56,65 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION  -->
 
-# 📖 Webpack template <a name="about-project"></a>
+# 📖 Smart Toto List <a name="about-project"></a>
 
-**Webpack template** write your description here.
+**Smart Toto List** is a powerful yet simple web-based application designed to help you manage your daily tasks and stay on top of your schedule. With its user-friendly interface, you can easily add, remove, and mark tasks as complete, as well as remove all completed tasks with just a click of a button. 
+
+The application has been designed to be easy to use, with a clean and intuitive interface that allows you to quickly add new tasks and manage existing ones. Whether you're a busy professional, a student, or a stay-at-home parent, Smart Todo List makes it easy to keep track of your tasks and stay organized.
+
+Overall, Smart Todo List is a versatile tool that can help you stay organized and focused. It's fully responsive, allowing you to manage your tasks from any device with an internet connection. Keep your to-do list up-to-date and clutter-free with Smart Todo List.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
-- Write tech here
+- HTML/CSS/JavaScript
 
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
-- List features here
+- **Add tasks:** Easily add new tasks to your to-do list with a simple input field.
+- **Remove tasks:** Remove tasks that are no longer relevant or necessary.
+- **Mark tasks as complete:** Check off tasks that you've completed to help you stay organized.
+- **Remove completed tasks:** Remove all completed tasks with the click of a button to keep your list clutter-free.
+- **Simple and user-friendly interface:** Designed to be easy to use and navigate, with an intuitive interface that's accessible to anyone.
+- **Fully responsive:** Access your to-do list from any device with an internet connection, including smartphones, tablets, and laptops.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO  -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-- Click <a href="https://link-to-live-demo">here</a> to open the live demo.
+- Click <a href="https://wacoo.github.io/smart-todo-list/dist/index.html">here</a> to open the live demo.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Project Presentation <a name="presentation"></a>
-- Click <a href="link-here">here</a> to open the presentation.
+<!-- - Click <a href="link-here">here</a> to open the presentation. -->
+- Comming soon
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 To get a local copy up and running, follow these steps.
-- Open the index.html with a web browser (Chrome, Firefox, Safari...)
+- Clone the repository: <a href="https://github.com/wacoo/smart-todo-list">here</a>
+- From the project's directory, run `npm install` to install all the reqirements.
+- Run `npm run start` to start the application. 
 
 ### Prerequisites
 
 In order to run this project you need:
 - A web browser (Chrome, Firefox, Safari...)
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- A stable internet connection
 
 ### Setup
-- Clone the repository to desired directory on local computer
-> `git clone https://github.com/wacoo/DEF-CON_Summit.git`
+Clone the repository to desired directory on local computer
+> `git clone https://github.com/wacoo/smart-todo-list`
+
+> `cd smart-todo-list`
+
+> `npm install`
+
+> `npm run start`
 
 ## 👥 Author <a name="authors"></a>
 - GitHub: [@wacoo](https://github.com/wacoo)
@@ -114,9 +126,9 @@ Example command:
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-- **Optimize the website to improve performance**
-- **Make the website more dynamic**
-- **Imporve the look and feel further**
+- **Add reminders**
+- **Collaboration functionality**
+- **Customizable theme**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -141,8 +153,7 @@ Feel free to check the [issues page](../../issues/).
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-- The original template of this web application is designed by <a href="https://www.behance.net/adagio07">Cindy Shin</a>. You can find the orignal template <a href="https://www.behance.net/gallery/29845175/CC-Global-Summit-2015">here</a>.
-
+- I want acknowledge my remote software engineering schools Microverse, for giving this opprtunity.
 - I want to thank all my clients for their patronage.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
