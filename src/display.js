@@ -125,6 +125,7 @@ class Display {
         } else {
           tasks.taskCollection[id].description = tsk.value;
         }
+        tasks.storeData();
         this.populatePage();
       }
     });
