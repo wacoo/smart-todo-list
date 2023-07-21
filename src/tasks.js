@@ -1,50 +1,43 @@
-let tasks = null;
+/* import/no-mutable-exports */
+
 class Tasks {
-    constructor() {
-        this.index = 0;
-        this.taskCollection = [];
+  constructor() {
+    this.index = 0;
+    this.taskCollection = [];
+  }
+
+  addTask(task) {
+    this.taskCollection.push(task);
+    this.index += 1;
+    this.storeData();
+  }
+
+  removeTask(idx) {
+    this.taskCollection = this.taskCollection.filter((tsk) => idx !== tsk.index);
+    console.log(this.taskCollection);
+    console.log(idx);
+    if (this.index > 0) {
+      this.index -= 1;
     }
 
-    addTask(task) {
-        this.taskCollection.push(task);
-        this.index += 1;
-        this.storeData();
+    for (let j = 0; j < this.taskCollection.length; j += 1) {
+      this.taskCollection[j].index = j;
+      this.index += 1;
     }
+    this.storeData();
+  }
 
-    removeTask(idx, one) {
-        console.log('===================================');
-        console.log(this.taskCollection[idx]);
-        this.taskCollection = this.taskCollection.filter((tsk) => idx != tsk.index);
-        if(this.idx > 0) {
-            this.index -= 1;
-        }
+  storeData() {
+    const strData = JSON.stringify(this.taskCollection);
+    localStorage.setItem('data', strData);
+  }
 
-        console.log(one);
-        if(one) {
-           
-            for (let j = 0; j < this.taskCollection.length; j += 1) {
-                this.taskCollection[j].index = j;
-                this.index += 1;
-            }
-        }   
-
-        this.storeData();
-        console.log('===================================');
+  restoreData() {
+    const strData = localStorage.getItem('data');
+    if (strData) {
+      this.taskCollection = JSON.parse(strData);
     }
-
-    storeData() {
-        const strData = JSON.stringify(tasks.taskCollection);
-        localStorage.setItem('data', strData);
-    }
-
-    restoreData () {
-        const strData = localStorage.getItem('data');
-        if (strData) {
-            tasks.taskCollection = JSON.parse(strData);
-        }        
-    }
+  }
 }
 
-tasks = new Tasks();
-
-export { tasks };
+export default new Tasks();

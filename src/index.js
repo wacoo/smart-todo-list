@@ -1,12 +1,10 @@
 import './style.css';
-import { OneTask } from './one_task.js';
-import { tasks } from './tasks.js';
-import { Display } from './display.js';
+import tasks from './tasks.js';
+import Display from './display.js';
 
 const display = new Display();
 
-
-/*updateTasks = () => {
+/* updateTasks = () => {
     for (let i = 0; i < tasks.taskCollection.length; i += 1) {
       const description = document.getElementById('desc');
       description.addEventListener('keypress', (event) => {
@@ -20,9 +18,9 @@ const display = new Display();
         }
       });
     }
-}*/
+} */
 
 tasks.restoreData();
 display.populatePage();
-//display.addEnterListener();
-//updateTasks();
+// display.addEnterListener();
+// updateTasks();

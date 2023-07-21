@@ -1,13 +1,13 @@
 class OneTask {
-    constructor(description, completed, index) {
-        this.description = description;
-        this.completed = completed;
-        this.index = index;
-    }
+  constructor(description, completed, index) {
+    this.description = description;
+    this.completed = completed;
+    this.index = index;
+  }
 
-    updateDescription(newDesc) {
-        task.description = newDesc;
-    }
+  updateDescription(newDesc) {
+    this.description = newDesc;
+  }
 }
 
-export { OneTask };
+export default OneTask;

@@ -9,6 +9,7 @@ body {
 
 #parent {
   width: 50%;
+
   /* min-height: 500px; */
   -webkit-box-shadow: 0 5px 5px 5px red;
   box-shadow: -1px 0 5px gray, 1px 0 5px gray, 0 1px 5px gray;
@@ -66,6 +67,7 @@ body {
   padding: 12px;
   margin: 0;
   border: 0;
+
   /* outline: red solid 2px; */
 }
 
@@ -109,7 +111,7 @@ input.chk {
   margin: 6px 4px 6px 12px;
 }
 
-input:focus{
+input:focus {
   outline: none;
 }
 
