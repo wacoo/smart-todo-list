@@ -1,5 +1,3 @@
-/* import/no-mutable-exports */
-
 class Tasks {
   constructor() {
     this.index = 0;

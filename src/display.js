@@ -97,10 +97,12 @@ class Display {
         tasks.taskCollection[idx].completed = true;
         tsk.classList.add('strike');
         this.populatePage();
+        tasks.storeData();
       } else {
         tasks.taskCollection[idx].completed = false;
         tsk.classList.remove('strike');
         this.populatePage();
+        tasks.storeData();
       }
     });
   }

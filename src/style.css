@@ -9,8 +9,6 @@ body {
 
 #parent {
   width: 50%;
-
-  /* min-height: 500px; */
   -webkit-box-shadow: 0 5px 5px 5px red;
   box-shadow: -1px 0 5px gray, 1px 0 5px gray, 0 1px 5px gray;
   font-family: sans-serif;
@@ -35,8 +33,6 @@ body {
 #parent span {
   width: 90%;
   text-align: left;
-
-  /* outline: red solid 2px;  */
 }
 
 #parent .head {
@@ -45,8 +41,6 @@ body {
   justify-content: space-between;
   align-items: center;
   border-bottom: gray solid 1px;
-
-  /* outline: red solid 2px; */
 }
 
 .div_input {
@@ -67,14 +61,10 @@ body {
   padding: 12px;
   margin: 0;
   border: 0;
-
-  /* outline: red solid 2px; */
 }
 
 #parent h3 {
   margin: 12px 0;
-
-  /* outline: blue solid 2px; */
 }
 
 .div_clear_all {
