@@ -108,7 +108,7 @@ In order to run this project you need:
 
 ### Setup
 - Clone the repository to desired directory on local computer
-> `git clone https://github.com/wacoo/smart-todo-list`
+>  `git clone https://github.com/wacoo/smart-todo-list`
 
 >  `cd smart-todo-list`
 
