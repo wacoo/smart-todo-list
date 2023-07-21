@@ -34,7 +34,7 @@ class Display {
     );
     const divInput = this.createElement('div', ['div_input'], null);
     const input = this.createElement('input', ['input'], 'input');
-    const enter = this.createElement('span', ['enter'], null);
+    const enter = this.createElement('span', ['enter'], 'enter');
     const divClearAll = this.createElement('div', ['div_clear_all'], null);
     const btnClear = this.createElement('button', 'clear', 'clear');
 
@@ -89,6 +89,7 @@ class Display {
 
     this.addEnterListener(input);
     this.clearButtonListener(btnClear);
+    this.addEnterBtnClickListener(input);
   }
 
   addCheckEventListener(chk, tsk, idx) {
@@ -107,30 +108,43 @@ class Display {
     });
   }
 
+  addEnterBtnClickListener(tsk) {
+    const btnEnter = document.getElementById('enter');
+    btnEnter.addEventListener('click', () => {
+      this.enterOrClickAction(tsk);
+    });
+  }
+
   addEnterListener(tsk) {
-    let input = null;
-    let id = null;
-    if (tsk.id !== 'desc') {
-      input = document.getElementById('input');
-    } else {
-      id = this.returnSiblingwithClass(tsk, 'can').id;
-    }
     tsk.addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
         event.preventDefault();
-        if (tsk.id !== 'desc') {
-          const task = new OneTask();
-          task.description = input.value;
-          task.completed = false;
-          task.index = tasks.index;
-          tasks.addTask(task);
-        } else {
-          tasks.taskCollection[id].description = tsk.value;
-        }
-        tasks.storeData();
-        this.populatePage();
+        this.enterOrClickAction(tsk);
       }
     });
+  }
+
+  enterOrClickAction(tsk) {
+    if (tsk.value) {
+      let input = null;
+      let id = null;
+      if (tsk.id !== 'desc') {
+        input = document.getElementById('input');
+      } else {
+        id = this.returnSiblingwithClass(tsk, 'can').id;
+      }
+      if (tsk.id !== 'desc') {
+        const task = new OneTask();
+        task.description = input.value;
+        task.completed = false;
+        task.index = tasks.index;
+        tasks.addTask(task);
+      } else {
+        tasks.taskCollection[id].description = tsk.value;
+      }
+      tasks.storeData();
+      this.populatePage();
+    }
   }
 
   updateTask(input) {
