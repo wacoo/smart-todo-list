@@ -13,13 +13,8 @@ class Tasks {
   }
 
   removeTask(idx) {
-    this.taskCollection = this.taskCollection.filter((tsk) => idx !== tsk.index);
-    console.log(this.taskCollection);
-    console.log(idx);
-    if (this.index > 0) {
-      this.index -= 1;
-    }
-
+    this.taskCollection = this.taskCollection.filter((tsk) => tsk.index !== idx);
+    this.index = 0;
     for (let j = 0; j < this.taskCollection.length; j += 1) {
       this.taskCollection[j].index = j;
       this.index += 1;

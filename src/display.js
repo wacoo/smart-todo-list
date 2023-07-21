@@ -1,7 +1,7 @@
-import OneTask from "./one_task.js";
-import tasks from "./tasks.js";
+import OneTask from './one_task.js';
+import tasks from './tasks.js';
 
-const root = document.getElementById("parent");
+const root = document.getElementById('parent');
 
 class Display {
   createElement = (type, cls, id) => {
@@ -23,24 +23,24 @@ class Display {
   };
 
   populatePage() {
-    root.innerHTML = "";
-    const h3 = this.createElement("h3", null, null);
-    const head = this.createElement("div", ["head"], null);
-    const ul = this.createElement("ul", null, null);
+    root.innerHTML = '';
+    const h3 = this.createElement('h3', null, null);
+    const head = this.createElement('div', ['head'], null);
+    const ul = this.createElement('ul', null, null);
     const refresh = this.createElement(
-      "i",
-      ["refresh", "fa", "fa-refresh"],
-      null
+      'i',
+      ['refresh', 'fa', 'fa-refresh'],
+      null,
     );
-    const divInput = this.createElement("div", ["div_input"], null);
-    const input = this.createElement("input", ["input"], "input");
-    const enter = this.createElement("span", ["enter"], null);
-    const divClearAll = this.createElement("div", ["div_clear_all"], null);
-    const btnClear = this.createElement("button", "clear", "clear");
+    const divInput = this.createElement('div', ['div_input'], null);
+    const input = this.createElement('input', ['input'], 'input');
+    const enter = this.createElement('span', ['enter'], null);
+    const divClearAll = this.createElement('div', ['div_clear_all'], null);
+    const btnClear = this.createElement('button', 'clear', 'clear');
 
     h3.innerHTML = "Today's Todo";
-    input.setAttribute("placeholder", "Add your list...");
-    enter.innerHTML = "&crarr;";
+    input.setAttribute('placeholder', 'Add your list...');
+    enter.innerHTML = '&crarr;';
 
     this.appendElement(h3, head);
     this.appendElement(refresh, head);
@@ -50,27 +50,27 @@ class Display {
     this.appendElement(divInput, root);
 
     for (let i = 0; i < tasks.taskCollection.length; i += 1) {
-      const li = this.createElement("li", null, null);
-      const chk = this.createElement("input", ["chk"], "chk");
-      const task = this.createElement("input", ["desc"], "desc");
+      const li = this.createElement('li', null, null);
+      const chk = this.createElement('input', ['chk'], 'chk');
+      const task = this.createElement('input', ['desc'], 'desc');
       const elipse = this.createElement(
-        "i",
-        ["elipse", "fa", "fa-ellipsis-v"],
-        "elipse"
+        'i',
+        ['elipse', 'fa', 'fa-ellipsis-v'],
+        'elipse',
       );
-      const can = this.createElement("i", ["can", "fa", "fa-trash"], `${i}`);
+      const can = this.createElement('i', ['can', 'fa', 'fa-trash'], `${i}`);
 
-      chk.type = "checkbox";
+      chk.type = 'checkbox';
       chk.checked = tasks.taskCollection[i].completed;
-      task.type = "text";
+      task.type = 'text';
       task.disabled = true;
       task.value = tasks.taskCollection[i].description;
       if (chk.checked) {
-        task.classList.add("strike");
+        task.classList.add('strike');
       } else {
-        task.classList.remove("strike");
+        task.classList.remove('strike');
       }
-      can.setAttribute("aria-hidden", "true");
+      can.setAttribute('aria-hidden', 'true');
       this.appendElement(chk, li);
       this.appendElement(task, li);
       this.appendElement(elipse, li);
@@ -83,7 +83,7 @@ class Display {
       this.addCheckEventListener(chk, task, i);
     }
     this.appendElement(ul, root);
-    btnClear.innerHTML = "Clear all completed";
+    btnClear.innerHTML = 'Clear all completed';
     this.appendElement(btnClear, divClearAll);
     this.appendElement(divClearAll, root);
 
@@ -92,14 +92,14 @@ class Display {
   }
 
   addCheckEventListener(chk, tsk, idx) {
-    chk.addEventListener("change", () => {
+    chk.addEventListener('change', () => {
       if (chk.checked) {
         tasks.taskCollection[idx].completed = true;
-        tsk.classList.add("strike");
+        tsk.classList.add('strike');
         this.populatePage();
       } else {
         tasks.taskCollection[idx].completed = false;
-        tsk.classList.remove("strike");
+        tsk.classList.remove('strike');
         this.populatePage();
       }
     });
@@ -108,15 +108,15 @@ class Display {
   addEnterListener(tsk) {
     let input = null;
     let id = null;
-    if (tsk.id !== "desc") {
-      input = document.getElementById("input");
+    if (tsk.id !== 'desc') {
+      input = document.getElementById('input');
     } else {
-      id = this.returnSiblingwithClass(tsk, "can").id;
+      id = this.returnSiblingwithClass(tsk, 'can').id;
     }
-    tsk.addEventListener("keypress", (event) => {
-      if (event.key === "Enter") {
+    tsk.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
         event.preventDefault();
-        if (tsk.id !== "desc") {
+        if (tsk.id !== 'desc') {
           const task = new OneTask();
           task.description = input.value;
           task.completed = false;
@@ -132,22 +132,22 @@ class Display {
   }
 
   updateTask(input) {
-    const can = this.returnSiblingwithClass(input, "can");
-    const elipse = this.returnSiblingwithClass(input, "elipse");
-    const tsk = this.returnSiblingwithClass(input, "desc");
-    elipse.addEventListener("click", () => {
+    const can = this.returnSiblingwithClass(input, 'can');
+    const elipse = this.returnSiblingwithClass(input, 'elipse');
+    const tsk = this.returnSiblingwithClass(input, 'desc');
+    elipse.addEventListener('click', () => {
       tsk.disabled = false;
-      can.style.display = "block";
-      elipse.style.display = "none";
+      can.style.display = 'block';
+      elipse.style.display = 'none';
     });
 
-    can.addEventListener("click", () => {
-      tasks.removeTask(can.id);
+    can.addEventListener('click', () => {
+      tasks.removeTask(parseInt(can.id, 10));
       this.populatePage();
     });
   }
 
-  returnSiblingwithClass = (elt, att = "") => {
+  returnSiblingwithClass = (elt, att = '') => {
     const parent = elt.parentNode;
     const children = parent.childNodes;
 
@@ -173,7 +173,7 @@ class Display {
   };
 
   clearButtonListener(btnClear) {
-    btnClear.addEventListener("click", () => {
+    btnClear.addEventListener('click', () => {
       this.removeAllCompleted();
       this.populatePage();
     });
